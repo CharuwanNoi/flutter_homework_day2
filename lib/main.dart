@@ -29,15 +29,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
-  // void _incrementCounter() {
-  //   print("## _incrementCounter");
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(builder: (context) => SecondRoute()),
-  //   );
-  // }
-
   void _login() {
     Navigator.push(
       context,
@@ -56,11 +47,16 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: null,
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
+        child: SingleChildScrollView(
+          child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Container(
+              margin: const EdgeInsets.only(bottom: 20.0),
+              child: Image.network(
+                'https://picsum.photos/250?image=9',
+              ),
+            ),
             Container(
               margin: const EdgeInsets.only(top: 10.0, bottom: 20.0),
               child: Text(
@@ -69,7 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(top: 10.0, bottom: 5.0, right: 16.0, left: 16.0),
+              margin: const EdgeInsets.only(
+                  top: 10.0, bottom: 5.0, right: 16.0, left: 16.0),
               child: TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -78,7 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(top: 5.0, bottom: 20.0, right: 16.0, left: 16.0),
+              margin: const EdgeInsets.only(
+                  top: 5.0, bottom: 20.0, right: 16.0, left: 16.0),
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
@@ -96,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+          ),
       ),
 
       // floatingActionButton: FloatingActionButton(
